@@ -214,6 +214,7 @@ def sub_balancing(settings, crosswalk, control_spec, incidence_table):
 
     # geography is an injected model step arg
     geography = inject.get_step_arg('geography')
+    print(geography)
 
     crosswalk_df = crosswalk.to_frame()
     incidence_df = incidence_table.to_frame()
@@ -222,7 +223,9 @@ def sub_balancing(settings, crosswalk, control_spec, incidence_table):
     geographies = settings.get('geographies')
     seed_geography = settings.get('seed_geography')
     meta_geography = geographies[0]
+    print(meta_geography)
     parent_geography = geographies[geographies.index(geography) - 1]
+    print(parent_geography)
 
     sub_geographies = geographies[geographies.index(geography):]
     parent_geographies = geographies[:geographies.index(geography)]
